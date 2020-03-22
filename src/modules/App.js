@@ -1,0 +1,62 @@
+import React, { useState, useEffect } from 'react'
+import './App.css'
+import './Card.js'
+import Card from './Card.js'
+
+
+
+const App = () => {
+
+    const [search, setSearch] = useState('')
+    const [query, setQuery] = useState('ditto')
+    const [pokemon, setPokemon] = useState({})
+
+    const exampleReq = `https://pokeapi.co/api/v2/pokemon/${query}/`
+
+    useEffect(() => {
+        getRequest()
+    }, [query])
+
+    const getRequest = async () => {
+        const response = await fetch(exampleReq)
+        const data = await response.json()
+        console.log(data)
+        setPokemon(data)
+    }
+
+    const updateSearch = e => {
+        setSearch(e.target.value)
+    }
+
+    const getSearch = e => {
+        e.preventDefault()
+        setQuery(search)
+        setSearch('')
+    }
+
+    return (
+        <div className='App'>
+            <form className="search-form" onSubmit={getSearch}>
+                <input className='search-bar' type="text" value={search} onChange={updateSearch} />
+                <button className='search-button' type="submit">Pesquisar</button>
+            </form>
+            <div className="card-holder">
+                {
+                    pokemon.types == null ? console.log("Nothing yet") : (
+                        <Card
+                            abilities={pokemon.abilities}
+                            moves={pokemon.moves}
+                            name={pokemon.name}
+                            game_indices={pokemon.game_indices}
+                            sprites={pokemon.sprites}
+                            stats={pokemon.stats}
+                            types={pokemon.types}
+                        />
+                    )
+                }
+            </div>
+        </div>
+    )
+}
+
+export default App;
