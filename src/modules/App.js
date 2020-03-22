@@ -8,7 +8,7 @@ import Card from './Card.js'
 const App = () => {
 
     const [search, setSearch] = useState('')
-    const [query, setQuery] = useState('ditto')
+    const [query, setQuery] = useState('pikachu')
     const [pokemon, setPokemon] = useState({})
 
     const exampleReq = `https://pokeapi.co/api/v2/pokemon/${query}/`
@@ -18,10 +18,14 @@ const App = () => {
     }, [query])
 
     const getRequest = async () => {
-        const response = await fetch(exampleReq)
+        try{
+            const response = await fetch(exampleReq)
         const data = await response.json()
-        console.log(data)
         setPokemon(data)
+        }
+        catch(err){
+            alert(`Um erro ocorreu: ${err}`)
+        }
     }
 
     const updateSearch = e => {
@@ -30,7 +34,7 @@ const App = () => {
 
     const getSearch = e => {
         e.preventDefault()
-        setQuery(search)
+        setQuery(search.toLowerCase())
         setSearch('')
     }
 
