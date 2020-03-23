@@ -53,6 +53,20 @@
     box-shadow: 0 0 10px black;
 }
 
+.typeList{
+    box-shadow: none;
+    background-color: transparent;
+    display: flex;
+    width: 100%;
+}
+
+.typeList li{
+    border-radius: 5px;
+    margin: 0.5em 0.5em 0 0;
+    padding: 0.2em 1.3em;
+    text-align: center;
+}
+
 .statList{
     text-align: left;
 }
@@ -86,6 +100,12 @@
     border-radius: 50%;
     border: solid black;
 }
+
+.fireType{
+    background: #F08030;
+}
+
+
 
 @media (max-width: 320px) 
 {
