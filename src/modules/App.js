@@ -8,7 +8,7 @@ import Card from './Card.js'
 const App = () => {
 
     const [search, setSearch] = useState('')
-    const [query, setQuery] = useState('pikachu')
+    const [query, setQuery] = useState(Math.floor(Math.random() * 803) + 1)
     const [pokemon, setPokemon] = useState({})
 
     const exampleReq = `https://pokeapi.co/api/v2/pokemon/${query}/`
