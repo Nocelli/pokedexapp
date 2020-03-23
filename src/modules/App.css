@@ -3,6 +3,13 @@
     min-height: 100vh;
     background: rgb(227,53,13);
     background: linear-gradient(122deg, rgba(227,53,13,1) 0%, rgba(49,49,49,1) 62%, rgba(49,49,49,1) 100%);
+    background: repeating-linear-gradient(
+    315deg,
+  #313131,
+  #313131 10px,
+  #444444 10px,
+  #444444 40px
+);
   }
   
   .search-form{
@@ -19,7 +26,7 @@
   }
   
   .search-button{
-    background: #e3350d;
+    background: #E3350D;
     border: none;
     padding: 0.73vw 1.46vw;
     color: white;
@@ -27,7 +34,7 @@
   }
   
   .search-button:hover{
-    opacity: 60%;
+    background: #861d06;
   }
   
   .card-holder{

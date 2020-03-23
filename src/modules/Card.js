@@ -24,6 +24,29 @@ const typeStyle = {
 
 }
 
+const AppearanceStyle = {
+    'white-2': '#ddd',
+    'black-2': '#333',
+    'white': '#fff',
+    'black': '#000',
+    'soulsilver': '#C0C0E1',
+    'heartgold': '#B69E00',
+    'platinum': '#999999',
+    'pearl': '#FFAAAA',
+    'diamond': '#AAAAFF',
+    'leafgreen': '#00DD00',
+    'firered': '#FF7327',
+    'emerald': '#00A000',
+    'sapphire': '#0000A0',
+    'ruby': '#A00000',
+    'crystal': '#4FD9FF',
+    'silver': '#C0C0C0',
+    'gold': '#DAA520',
+    'yellow': '#FFD733',
+    'blue': '#1111FF',
+    'red': '#FF1111',
+}
+
 const Card = ({ abilities, moves, name, game_indices, sprites, stats, types }) => {
     return (
         <div className="card">
@@ -51,22 +74,22 @@ const Card = ({ abilities, moves, name, game_indices, sprites, stats, types }) =
             </ul>
             <div className="lists">
                 <div>
-                    <span className='listTitle' >Abilities</span>
-                    <ol className='abilityList'>
-                        {Object.entries(abilities).map((ability, key) => (
+                    <span className='listTitle' >Stats</span>
+                    <ol className='statList'>
+                        {Object.entries(stats).map((stat, key) => (
                             <li key={key}>
-                                <span>{ability[1].ability.name}</span>
+                                <span>{`${stat[1].stat.name.replace('special', 'sp')}: `}</span>
+                                <span>{stat[1].base_stat}</span>
                             </li>
                         ))}
                     </ol>
                 </div>
                 <div>
-                    <span className='listTitle' >Stats</span>
-                    <ol className='statList'>
-                        {Object.entries(stats).map((stat, key) => (
+                    <span className='listTitle' >Abilities</span>
+                    <ol className='abilityList'>
+                        {Object.entries(abilities).map((ability, key) => (
                             <li key={key}>
-                                <span>{`${stat[1].stat.name.replace('special', 'spc')}: `}</span>
-                                <span>{stat[1].base_stat}</span>
+                                <span>{ability[1].ability.name}</span>
                             </li>
                         ))}
                     </ol>
@@ -85,7 +108,7 @@ const Card = ({ abilities, moves, name, game_indices, sprites, stats, types }) =
                     <span className='listTitle' >Appearances</span>
                     <ol className='AppearanceList'>
                         {Object.entries(game_indices).map((Appearance, key) => (
-                            <li key={key}>
+                            <li style={{ background: AppearanceStyle[Appearance[1].version.name] }} key={key}>
                                 {Appearance[1].version.name}
                             </li>
                         ))}
