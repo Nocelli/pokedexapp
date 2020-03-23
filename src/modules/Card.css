@@ -54,7 +54,7 @@
 }
 
 .moveList , .AppearanceList{
-    max-height: 200px;
+    max-height: 30vh;
     overflow: hidden; 
     overflow-y: auto;
 }

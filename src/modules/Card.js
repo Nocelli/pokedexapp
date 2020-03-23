@@ -54,9 +54,8 @@ const Card = ({ abilities, moves, name, game_indices, sprites, stats, types }) =
             <div>
                 <ol className='typeList'>
                     {Object.entries(types).map((type, key) => (
-                        <li style={
-                            { background: typeStyle[type[1].type.name] }}
-                            key={key}>
+                        <li key={key} style={
+                            { background: typeStyle[type[1].type.name] }}>
                             {type[1].type.name}</li>
                     ))}
                 </ol>

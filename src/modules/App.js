@@ -18,12 +18,19 @@ const App = () => {
     }, [query])
 
     const getRequest = async () => {
-        try{
+        try {
             const response = await fetch(exampleReq)
-        const data = await response.json()
-        setPokemon(data)
+            if (response.status === 200) {
+                const data = await response.json()
+                setPokemon(data)
+                return;
+            }
+            else if (response.status === 404) {
+                alert(`Não encontrado: ${query}`)
+                return;
+            }
         }
-        catch(err){
+        catch (err) {
             alert(`Um erro ocorreu: ${err}`)
         }
     }
