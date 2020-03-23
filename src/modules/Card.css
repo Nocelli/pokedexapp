@@ -18,6 +18,14 @@
     padding: 0.74vw;
 }
 
+.pokeNameHolder{
+    text-decoration: none;
+}
+
+.pokeNameHolder:hover{
+    text-decoration: underline solid #212121;
+}
+
 .pokeName{
     color: #212121;
     font-size: 36px;

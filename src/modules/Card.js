@@ -50,7 +50,9 @@ const AppearanceStyle = {
 const Card = ({ abilities, moves, name, game_indices, sprites, stats, types }) => {
     return (
         <div className="card">
+            <a className='pokeNameHolder' href={`https://bulbapedia.bulbagarden.net/wiki/${name}_(Pok%C3%A9mon)`}>
             <span className='pokeName' >{name}</span>
+            </a>
             <div>
                 <ol className='typeList'>
                     {Object.entries(types).map((type, key) => (
