@@ -42,3 +42,15 @@
     justify-content: space-around;
     flex-wrap: wrap;
   }
+
+.error-message{
+  position: sticky;
+  top: 0em;
+  text-align: center;
+  color: white;
+  margin: 0 3em;
+  padding: 0.3em;
+  background-color: #cc0000;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
