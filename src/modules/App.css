@@ -24,7 +24,7 @@
     border: none;
     padding: 0.73vw;
   }
-  
+
   .search-button{
     background: #E3350D;
     border: none;
@@ -54,4 +54,19 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   cursor: pointer;
+}
+
+
+@media (max-width: 320px) 
+{
+  .search-bar{
+   font-size: 11px;
+  }
+}
+
+@media (min-width: 1024px) 
+{
+  .search-bar{
+   font-size: 16px;
+  }
 }
