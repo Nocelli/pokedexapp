@@ -51,7 +51,7 @@ const App = () => {
     const showErrors = () =>{
         if(errors.length > 0){
             return(
-                <div className='error-message'>
+                <div className='error-message' onClick={() => setErrors([])}>
                 {
                     errors.map(erro =>
                         <h1>{erro}</h1>
@@ -65,7 +65,7 @@ const App = () => {
         <div className='App'>
             {showErrors()}
             <form className="search-form" onSubmit={getSearch}>
-                <input className='search-bar' type="text" value={search} onChange={updateSearch} />
+                <input className='search-bar' type="text" placeholder='Digite o nome de um Pokémon' value={search} onChange={updateSearch} />
                 <button className='search-button' type="submit">Pesquisar</button>
             </form>
             <div className="card-holder">
